@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about resturant</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="brand">
+                        <a class="navbar-brand d-none d-md-block" href="index.html"></a>
+                        <div class="HeadInfo">
+                            <div id="name">
+                                <a href="index.html">
+                                    <h1>Elshibl Restaurant</h1>
+                                </a>
+                            </div>
+                            <div id="cert">
+                                <i class="fa-regular fa-star"></i>
+                                <span>Kosher Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav  mb-2 mb-lg-0 d-flex align-items-center">
+                        <li class="nav-item d-lg-none d-md-flex active" aria-current="true">
+                            <span class="fa-solid fa-house"></span>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <span class="fa-solid fa-utensils"></span>
+                            <a class="nav-link" href="menu-category.html">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <span class="fa-solid fa-circle-info"></span>
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <span class="fa-solid fa-certificate"></span>
+                            <a class="nav-link" href="#">
+                                Awards</a>
+                        </li>
+                        <li id="phone" class="nav-item">
+                            <a class="nav-link" href="tel:301-602-5007"><span>301-602-5007</span></a>
+                            <div>* We Deliver</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- end the header -->
+    <section>
+        <div class="container d-lg-none d-block ">
+            <div class="Phone-sm text-center">
+                <a class="nav-link" href="tel:301-602-5007"><i
+                        class="fa-solid fa-phone fa-sm"></i>&nbsp;<span>301-602-5007</span></a>
+            </div>
+            <div class="text-light text-center text-uppercase">* We Deliver</div>
+        </div>
+        <div class="main-container container">
+            <div class="our-restaurant">
+                <img src="/images/restaurant768.png" alt="restaurant photo" class="img-fluid .d-block .d-sm-none" />
+            </div>
+        </div>
+    </section>
+    <section id="Tiles">
+        <div class="container">
+            <div id="home-tiles" class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="menu-category.html">
+                        <div class="tiles menu-tile"><span>menu</span></div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="single-category.html">
+                        <div class=" tiles specials-tile"><span>specials</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="https://goo.gl/maps/cmMHHaX1mpHFUWrJ9" target="_blank" ">
+                    <div class=" tiles map-tile">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d479985.77422650455!2d79.2110848365356!3d19.97117565466919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd317de019e8843%3A0x8c8a111dc971341a!2sHealthy%20Food!5e0!3m2!1sar!2seg!4v1663124362239!5m2!1sar!2seg"
+                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <span>map</span>
+                </div>
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <section id="hours" class="col-sm-4">
+                    <span>Hours:</span><br>
+                    Sun-Thurs: 11:15am - 10:00pm<br>
+                    Fri: 11:15am - 2:30pm<br>
+                    Staurday Closed
+                    <hr class="d-block d-sm-none">
+                </section>
+                <section id="address" class="col-sm-4">
+                    <span>Address:</span><br>
+                    7103 Reisterstown Road<br>
+                    Baltimore, MD 31325
+                    <p>* Delivery area within 3-5 miles, with minimum order of $20 plus $3 charge for all deliveries.
+                    </p>
+                    <hr class="d-block d-sm-none">
+                </section>
+                <section id="testimonials" class="col-sm-4">
+                    <p>"The best Healthy Food restaurant I've been to! And that's saying alot , since I've been to
+                        many!"</p>
+                    <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+                </section>
+            </div>
+            <div class="text-center">
+                &copy; Copyright Healthy Food Restaurant
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="./js/all.min.js"></script>
+
+</html>
