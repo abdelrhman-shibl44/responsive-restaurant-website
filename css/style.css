@@ -12,23 +12,17 @@
 
 body {
     font-size: 16px;
-    font-family: ;
     background-color: var(--main-color);
 }
 
 .navbar {
-    background: yellow;
+    background: #FFFFF0;
     padding-bottom: 0
 }
 
 .navbar-header {
     display: flex;
 }
-
-.container {
-    align-items: flex-start !important;
-}
-
 
 .navbar-brand {
     background: Url("../images/healthy-food.png") no-repeat #3a4708;
@@ -74,7 +68,14 @@ body {
     text-decoration: none;
     text-shadow: 1px 1px 1px #222;
 }
-
+@media(max-width:280px) {
+    #name a  h1{
+        font-size: 20px;
+    }
+    #cert span{
+        font-size: 15px;
+    }
+}
 .nav-item {
     text-align: center;
 }
@@ -122,7 +123,7 @@ body {
 
 /* start style phone in sm size */
 .Phone-sm {
-    background-color: yellow;
+    background-color: #FFFFF0;
     padding: 2vw 0;
     margin-top: 25px;
     border-radius: 4px;
@@ -137,9 +138,13 @@ li>span {
 }
 
 .navbar-collapse {
+    align-self: flex-start;
     margin-top: 10px
 }
 
+#menu  {
+    align-self: flex-start;
+}
 #menu button {
     width: 70px;
     height: 40px;
@@ -161,6 +166,7 @@ li>span {
 }
 
 .main-container {
+    width: 100%;
     border-radius: 8px;
     padding-right: 12px;
     padding-left: 12px
@@ -174,10 +180,12 @@ li>span {
 
 .main-container img {
     width: 100%;
+    object-fit: cover;
 }
 
 /* start home tiles */
 #home-tiles {
+    width: 100%;
     margin: 30px 0;
 }
 
@@ -213,11 +221,14 @@ li>span {
     font-size: 1.5em;
     color: #fff;
 }
-
-#Tiles .container {
-    padding: 0
+#Tiles .container{
+    min-height:50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
 #Tiles .menu-tile {
     background: url('../images/dish1.jpg') no-repeat;
     background-position: center center;
@@ -353,11 +364,14 @@ footer #testimonials p:last-child {
     bottom: 0;
     background-color: #000;
     opacity: 0.8;
+    z-index: 10;
+    right: 0;
 }
 
 .category-tile img {
     width: 100%;
     max-width: 100%;
+    object-fit: cover;
 }
 
 /* div.row div {
@@ -398,7 +412,8 @@ div.row {
 /* end price */
 .menu-item-photo img {
     width: 100%;
-    height: 150px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .menu-item-description {
@@ -428,7 +443,21 @@ div.row {
     }
 
     .menu-item-photo {
-        width: 250px;
+        width: 100%;
         margin: 0 auto 5px;
     }
+}
+
+/* Awards page */
+.Awards__description,
+.About__Description,
+.Awards__Details{
+color: #f2f2f2;
+font-size: 1.2rem;
+line-height: 1.6;
+text-align: justify;
+}
+.Awards__title,
+.About__Title{
+    font-size: 2rem;
 }
