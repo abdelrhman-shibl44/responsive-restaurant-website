@@ -2,7 +2,7 @@ $(document).ready(function () {
     $(".navbar-toggler").on("blur", function () {
         let windowWidth = window.innerWidth
         if (windowWidth < 991) {
-            $(".navbar-collapse").collapse("hide");
+            setTimeout(() => {$(".navbar-collapse").collapse("hide");},100)
         }
     });
 });
@@ -51,7 +51,6 @@ $(document).ready(function () {
     AS.loadAwardsPage = function () {
         showLoading("#Tiles .container")
         $ajaxUtils.sendGetHttpRequest(awardsHtml, function (responseText) {
-            console.log(responseText)
             document.querySelector("#Tiles .container").innerHTML = responseText
         }, false)
     }
@@ -59,7 +58,6 @@ $(document).ready(function () {
     AS.loadAboutPage = function () {
         showLoading("#Tiles .container")
         $ajaxUtils.sendGetHttpRequest(aboutHtml, function (responseText) {
-            console.log(responseText)
             document.querySelector("#Tiles .container").innerHTML = responseText
         }, false)
     }
@@ -77,7 +75,7 @@ $(document).ready(function () {
         );
     }
     function buildAndShowCategoriesHtml(categories) {
-        console.log(categories);
+        
         $ajaxUtils.sendGetHttpRequest(
             categoriesTitleHtml,
             function (categoriesTitleHtml) {
@@ -108,7 +106,6 @@ $(document).ready(function () {
     }
     // buid html the single category page based on json data 
     function buildAndShowItemsHtml(categoryMenuItems) {
-        console.log(categoryMenuItems)
         $ajaxUtils.sendGetHttpRequest(
             menuItmesTitleHtml,
             function (menuItmesTitleHtml) {
@@ -140,9 +137,9 @@ $(document).ready(function () {
             html = insertProperty(html, "short_name", menuItems[i].short_name);
             html = insertProperty(html, "catShortName", catShortName);
             html = insertItemPrice(html, "price_small", menuItems[i].price_small);
-            html = insertProperty(html, "small_portion_name", menuItems[i].small_portion_name);
+            html = insertProperty(html, "small_portion_name", menuItems[i].small_portion_name ?? "");
             html = insertItemPrice(html, "price_large", menuItems[i].price_large);
-            html = insertProperty(html, "large_portion_name", menuItems[i].large_portion_name);
+            html = insertProperty(html, "large_portion_name", menuItems[i].large_portion_name ?? "");
             html = insertProperty(html, "name", menuItems[i].name);
             html = insertProperty(html, "description", menuItems[i].description);
             finalHtml += html
@@ -159,6 +156,33 @@ $(document).ready(function () {
         html = insertProperty(html, pricePropName, priceValue)
         return html
     }
-    global.$AS = AS
 
+    // add active class 
+
+    function addActiveClass() {
+        document.addEventListener("DOMContentLoaded",() => {
+            const linksParent = document.querySelector(".navbar-nav")
+            const mainLinks = document.querySelectorAll(".mainLink")
+            mainLinks.forEach((mainLink) => {
+                mainLink.addEventListener("click",() => {
+                        document.querySelectorAll(".nav-item").forEach((link) => link.classList.remove("active"))  
+                        document.querySelector(".nav-item").classList.add("active") 
+                    })
+                })
+            linksParent.addEventListener("click",(e) => {
+                const clickedLink = e.target.closest(".nav-item")
+                if(clickedLink) {
+                    // Remove "active" class from all links
+                    const allLinks = linksParent.querySelectorAll(".nav-item")
+                    allLinks && allLinks.forEach((link) => link.classList.remove("active"))
+                    // Add "active" class when link is clicked
+                    clickedLink.classList.add("active")
+                }
+            })
+        })
+    }
+    addActiveClass()
+    
+    global.$AS = AS
+    
 })(window)
