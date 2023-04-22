@@ -84,22 +84,27 @@ body {
     font-size: 1.2em;
 }
 
-.navbar-nav li>svg {
-    font-size: 2vw;
+.navbar-nav a>svg {
+    font-size: 1.8vw;
     color: var(--main-color)
 }
 
 .navbar-nav li {
-    padding: 0 10px;
+    margin: 0 10px;
 }
 
 .navbar-nav li a.active,
 .navbar-nav li a {
     color: var(--main-color) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .navbar-nav a {
-    padding: 0
+    padding: 10px
 }
 
 .navbar-nav #phone a {
@@ -284,7 +289,7 @@ footer #testimonials p:last-child {
 /* responsive layout  */
 @media(min-width:1200px) {
     .our-restaurant {
-        background: url("../images/restaurant2.jpg") no-repeat;
+        background: url("../images/jumbotron_1200.jpg") no-repeat;
         height: 1200px;
     }
 }
@@ -294,17 +299,12 @@ footer #testimonials p:last-child {
         border-top: 3px solid #fff
     }
 
-    .navbar-nav li {
-        padding: 10px;
-    }
-
-    .navbar-nav li svg {
+    .navbar-nav a svg {
         font-size: 1em;
     }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
+    .navbar-nav li a,
+    .navbar-nav li a.active {
+        flex-direction: row;
         gap: 10px;
     }
 
@@ -313,7 +313,7 @@ footer #testimonials p:last-child {
     }
 
     .container .our-restaurant {
-        background: url("../images/restaurant-992.png") no-repeat;
+        background: url("../images/jumbotron_1200.jpg") no-repeat;
     }
 
 }
@@ -324,7 +324,7 @@ footer #testimonials p:last-child {
 
 @media(max-width:768px) {
     .container .our-restaurant {
-        background: url("../images/restaurant768.png") no-repeat;
+        background: url("../images/jumbotron_1200.jpg") no-repeat;
     }
 
 }
@@ -355,6 +355,11 @@ footer #testimonials p:last-child {
     overflow: hidden;
     margin: 15px auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.605);
+    transition: 0.3s ease-in-out;
+}
+.category-tile:hover {
+    box-shadow:  0 0 10px #fff;
+    transition: 0.3s ease-in-out;
 }
 
 .category-tile span {
@@ -373,10 +378,6 @@ footer #testimonials p:last-child {
     max-width: 100%;
     object-fit: cover;
 }
-
-/* div.row div {
-    margin: 10px 0
-} */
 /* start making the single page  */
 div.row {
     margin-bottom: 15px;
@@ -386,6 +387,10 @@ div.row {
     position: relative;
     box-shadow: 0 0 10px #000;
     margin: 5px;
+}
+.menu-item-photo:hover {
+    box-shadow:  0 0 10px #fff;
+    transition: 0.3s ease-out;
 }
 
 .menu-item-photo .num {
@@ -456,8 +461,29 @@ color: #f2f2f2;
 font-size: 1.2rem;
 line-height: 1.6;
 text-align: justify;
+-webkit-hyphens: auto;
+hyphens: auto;
 }
 .Awards__title,
 .About__Title{
     font-size: 2rem;
+}
+
+/* style active class */
+.nav-item.active{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(201 131 65 / 65%);
+    border-radius: 16px 0;
+}
+@media(max-width:991px) {
+    .nav-item.active{
+        width: 90%;
+        height: 50px;
+        flex-direction: row;
+    }
 }
