@@ -20,10 +20,10 @@
             <div class="container">
                 <div class="navbar-header">
                     <div class="brand">
-                        <a href="#" class="navbar-brand d-none d-md-block"  onclick=$AS.loadMainPage()></a>
+                        <a href="#" class="navbar-brand mainLink d-none d-md-block"  onclick="$AS.loadMainPage()"></a>
                         <div class="HeadInfo">
                             <div id="name">
-                                <a href="#" onclick=$AS.loadMainPage()>
+                                <a class="mainLink" href="#" onclick=$AS.loadMainPage()>
                                     <h1>Elshibl Restaurant</h1>
                                 </a>
                             </div>
@@ -46,23 +46,27 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav  mb-2 mb-lg-0 d-flex align-items-center">
                         <li class="nav-item d-lg-none d-md-flex active" aria-current="true">
-                            <span class="fa-solid fa-house"></span>
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#" onclick="$AS.loadMainPage()">
+                                <span class="fa-solid fa-house"></span>
+                                Home
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <span class="fa-solid fa-utensils"></span>
-                            <a class="nav-link" href="#" onclick="$AS.loadMenuCategories('{{short_name}}')">Menu</a>
+                            <a class="nav-link" href="#" onclick="$AS.loadMenuCategories('{{short_name}}')"><span class="fa-solid fa-utensils"></span> Menu</a>
                         </li>
                         <li class="nav-item">
-                            <span class="fa-solid fa-circle-info"></span>
-                            <a class="nav-link" href="#" onclick="$AS.loadAboutPage()">About</a>
+                            <a class="nav-link" href="#" onclick="$AS.loadAboutPage()">
+                                <span class="fa-solid fa-circle-info"></span> 
+                                About
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <span class="fa-solid fa-certificate"></span>
                             <a class="nav-link" href="#" onclick="$AS.loadAwardsPage()">
-                                Awards</a>
+                                <span class="fa-solid fa-certificate"></span>
+                                Awards
+                            </a>
                         </li>
-                        <li id="phone" class="nav-item">
+                        <li id="phone">
                             <a class="nav-link" href="tel:301-602-5007"><span>301-602-5007</span></a>
                             <div>* We Deliver</div>
                         </li>
